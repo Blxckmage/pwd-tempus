@@ -14,9 +14,9 @@ const AboutUs: React.FC = () => {
           </strong>{" "}
           Our mission is to seamlessly integrate cutting-edge technology with
           elegant design, providing our customers with unparalleled convenience
-          and style. Whether you're tracking fitness goals, staying connected on
-          the go, or simply appreciating precision engineering, Tempus
-          smartwatches are designed to elevate your experience.
+          and style. Whether you&apos;re tracking fitness goals, staying
+          connected on the go, or simply appreciating precision engineering,
+          Tempus smartwatches are designed to elevate your experience.
         </p>
       </div>
       <div className="container mx-auto mt-28 px-11 pb-20 text-center">
@@ -43,9 +43,10 @@ const AboutUs: React.FC = () => {
                 Our History
               </h2>
               <p className="text-lg font-normal leading-relaxed md:text-2xl">
-                Tempus was founded in 2015 with a vision to create the world's
-                most advanced smartwatch. Since then, we've grown into a global
-                brand known for our commitment to quality and innovation.
+                Tempus was founded in 2015 with a vision to create the
+                world&apos;s most advanced smartwatch. Since then, we&apos;ve
+                grown into a global brand known for our commitment to quality
+                and innovation.
               </p>
             </div>
           </div>
