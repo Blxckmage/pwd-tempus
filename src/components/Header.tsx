@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 import React from "react";
 
 const Header: React.FC = () => {
@@ -12,7 +11,6 @@ const Header: React.FC = () => {
         playsInline
         className="absolute z-0 h-full w-full object-cover object-left"
       >
-        <source src="/assets/header.mp4" type="video/mp4" />
         <source src="/assets/header.webm" type="video/webm" />
       </video>
       <div className="z-10 flex flex-1 flex-col items-center justify-center p-12 text-center font-bold text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)]">
