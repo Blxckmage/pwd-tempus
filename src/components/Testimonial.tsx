@@ -5,7 +5,6 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import React from "react";
 
 const testimonials = [
@@ -61,7 +60,7 @@ const testimonials = [
 
 const Testimonial: React.FC = () => {
   return (
-    <div className="mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center px-4 py-12 sm:px-6 lg:max-w-4xl lg:px-8 lg:py-16">
+    <div className="mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center px-4 py-12 sm:px-6 lg:max-w-5xl lg:px-8 lg:py-16">
       <div className="text-center">
         <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
           What Our Customers Say
@@ -72,7 +71,7 @@ const Testimonial: React.FC = () => {
         </p>
       </div>
       <Carousel
-        className="mt-12"
+        className="mt-12 max-w-xl lg:max-w-4xl"
         opts={{
           align: "center",
           loop: true,
@@ -82,10 +81,6 @@ const Testimonial: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index}>
               <div className="flex flex-col items-center space-y-4">
-                <Avatar className="h-16 w-16">
-                  <AvatarImage src={testimonial.image} />
-                  <AvatarFallback>{testimonial.fallback}</AvatarFallback>
-                </Avatar>
                 <blockquote className="text-center">
                   <p className="text-lg font-medium text-black">
                     "{testimonial.quote}"
