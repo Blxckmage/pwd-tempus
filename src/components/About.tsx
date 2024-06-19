@@ -3,7 +3,7 @@ import React from "react";
 import Member from "./about/Member";
 
 const AboutUs: React.FC = () => {
-  const members = getMembers(10);
+  const members = getMembers(15);
 
   return (
     <section className="flex flex-col bg-white pt-20 text-lg md:text-xl">
