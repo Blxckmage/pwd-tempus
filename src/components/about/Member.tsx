@@ -10,9 +10,8 @@ const Member: React.FC<MemberProps> = ({ name, social, avatar, position }) => {
         <Image
           src={avatar}
           alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-full"
+          className="rounded-full object-cover"
+          fill
         />
       </div>
       <div className="text-center">{name}</div>
