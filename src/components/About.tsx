@@ -1,9 +1,10 @@
 import { getMembers } from "@/lib/getMembers";
 import React from "react";
 import Member from "./about/Member";
+import Link from "next/link";
 
 const AboutUs: React.FC = () => {
-  const members = getMembers(15);
+  const members = getMembers(10);
 
   return (
     <section className="flex flex-col bg-white pt-20 text-lg md:text-xl">
@@ -16,7 +17,11 @@ const AboutUs: React.FC = () => {
           elegant design, providing our customers with unparalleled convenience
           and style. Whether you&apos;re tracking fitness goals, staying
           connected on the go, or simply appreciating precision engineering,
-          Tempus smartwatches are designed to elevate your experience.
+          Tempus smartwatches are designed to elevate your experience. You can
+          learn more about our story{" "}
+          <Link className="underline" href="/about">
+            here.
+          </Link>
         </p>
       </div>
       <div className="container mx-auto mt-28 px-11 pb-20 text-center">
@@ -33,6 +38,9 @@ const AboutUs: React.FC = () => {
             <Member key={member.id} {...member} />
           ))}
         </div>
+        <button className="mt-10 text-black underline hover:text-black/80 focus:outline-none">
+          <Link href="/teams">See All Our Team Members</Link>
+        </button>
       </div>
 
       <div className="flex flex-col lg:flex-row">

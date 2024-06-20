@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { client } from "@/lib/contentful";
+import Link from "next/link";
 
 type ImageFields = {
   file: {
@@ -57,39 +58,46 @@ const Products: React.FC = () => {
             <div className="h-12 w-12 animate-spin rounded-full border-4 border-white border-t-transparent" />
           </div>
         ) : (
-          <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => {
-              const { fields } = product;
-              return (
-                <article
-                  key={product.id}
-                  className="transform overflow-hidden border-2 border-white bg-black shadow-lg transition-transform"
-                >
-                  <Image
-                    src={`https:${fields.productImage.fields.file.url}`}
-                    alt={fields.productName}
-                    width={1920}
-                    height={1080}
-                    className="h-64 w-full object-cover"
-                  />
-                  <div className="p-6">
-                    <h2 className="text-xl font-semibold text-white">
-                      {fields.productName}
-                    </h2>
-                    <p className="mt-2 text-lg font-medium text-white">
-                      {fields.productPrice.toLocaleString("id-ID", {
-                        style: "currency",
-                        currency: "IDR",
-                      })}
-                    </p>
-                    <Button variant="secondary" className="mt-4">
-                      Buy now
-                    </Button>
-                  </div>
-                </article>
-              );
-            })}
-          </section>
+          <>
+            <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => {
+                const { fields } = product;
+                return (
+                  <article
+                    key={product.id}
+                    className="transform overflow-hidden border-2 border-white bg-black shadow-lg transition-transform"
+                  >
+                    <Image
+                      src={`https:${fields.productImage.fields.file.url}`}
+                      alt={fields.productName}
+                      width={1920}
+                      height={1080}
+                      className="h-64 w-full object-cover"
+                    />
+                    <div className="p-6">
+                      <h2 className="text-xl font-semibold text-white">
+                        {fields.productName}
+                      </h2>
+                      <p className="mt-2 text-lg font-medium text-white">
+                        {fields.productPrice.toLocaleString("id-ID", {
+                          style: "currency",
+                          currency: "IDR",
+                        })}
+                      </p>
+                      <Button variant="secondary" className="mt-4">
+                        Buy now
+                      </Button>
+                    </div>
+                  </article>
+                );
+              })}
+            </section>
+            <div className="flex justify-end underline">
+              <Link href="/products" className="text-2xl text-white">
+                See all products
+              </Link>
+            </div>
+          </>
         )}
       </div>
     </div>
