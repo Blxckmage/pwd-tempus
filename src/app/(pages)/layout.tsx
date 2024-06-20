@@ -1,5 +1,4 @@
 import BackButton from "@/components/BackButton";
-import { inter } from "../layout";
 
 export default function Layout({
   children,
@@ -8,7 +7,7 @@ export default function Layout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         {children}
         <BackButton />
       </body>
